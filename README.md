@@ -9,7 +9,7 @@ Each notebook builds on the previous one in complexity and scale.
 ## Notebooks
 
 ### Day 1 — Netflix ETL Pipeline
-`01_netflix_etl_pandas_sql.ipynb`
+[`01_netflix_etl_pandas_sql.ipynb`](01_netflix_etl_pandas_sql.ipynb)
 
 **Dataset:** Netflix Shows (Kaggle) — 8,807 rows · 12 columns  
 **Stack:** Python · pandas · SQLAlchemy · SQLite · SQL
@@ -36,7 +36,7 @@ Same pattern used in Kafka, SQS, and enterprise ETL systems.
 ---
 
 ### Day 2 — Shein E-Commerce Multi-Source ETL Pipeline
-`02_shein_ecommerce_etl_multifile_pipeline.ipynb`
+[`02_shein_ecommerce_etl_multifile_pipeline.ipynb`](02_shein_ecommerce_etl_multifile_pipeline.ipynb)
 
 **Dataset:** Shein US Product Listings (Kaggle) — 21 CSV files · 82,105 rows  
 **Stack:** Python · pandas · NumPy · SQLAlchemy · SQLite · Regex

@@ -27,11 +27,7 @@ Each notebook builds on the previous one in complexity.
 
 ---
 
-<<<<<<< HEAD
-### Day 2 — Shein E-Commerce Multi-Source ETL Pipeline
-=======
 ### Day 2 — Shein E-Commerce Multi-Source ETL
->>>>>>> bb119a2 (Day 4)
 [`02_shein_ecommerce_etl_multifile_pipeline.ipynb`](02_shein_ecommerce_etl_multifile_pipeline.ipynb)
 
 **Dataset:** Shein US Product Listings — 21 CSV files · 82,105 rows
@@ -85,24 +81,32 @@ Each notebook builds on the previous one in complexity.
 
 ---
 
-<<<<<<< HEAD
+## Skills Demonstrated
+
+| **Stage**          | **Techniques / Tools**                                                                 |
+|---------------------|----------------------------------------------------------------------------------------|
+| **Data Ingestion**  | `pd.read_csv`, `pd.concat`, `kagglehub`                                                |
+| **Transformation**  | Pandas cleaning, NumPy vectorized operations                                           |
+| **Feature Eng.**    | Date extraction, custom categorisation                                                 |
+| **Data Quality**    | DLQ pattern, null handling, deduplication                                              |
+| **SQL Analytics**   | `GROUP BY`, `HAVING`, window functions, `RANK()`                                       |
+| **Storage**         | SQLite via SQLAlchemy, Parquet output                                                  |
+
+---
+
 ## How to Run
 
 ```bash
-pip install pandas numpy sqlalchemy kagglehub
+pip install pandas numpy sqlalchemy kagglehub pyarrow
 jupyter notebook
 ```
 
 Open any notebook and run cells top to bottom.
-Datasets are downloaded automatically via `kagglehub`.
+Datasets download automatically via `kagglehub`.
 
 ---
 
 ## Author
 
-**Gopal Patil**  
-[GitHub](https://github.com/gopalpatil15) ·
-[LinkedIn](https://linkedin.com/in/gopalpatil)
-=======
-## Skills Demonstrated
->>>>>>> bb119a2 (Day 4)
+**Gopal Patil**
+[GitHub](https://github.com/gopalpatil15)

@@ -2,7 +2,7 @@
 
 Hands-on daily ETL practice notebooks showing progression
 from pandas fundamentals to production-style pipelines.
-Each notebook builds on the previous one in complexity.
+Built independently — each notebook adds new concepts.
 
 ---
 
@@ -18,7 +18,7 @@ Each notebook builds on the previous one in complexity.
 - Loaded and explored real-world dataset
 - Vectorized string cleaning with `.str.strip()`
 - Deduplication on `show_id` key column
-- Dictionary-based `fillna` for selective null handling
+- Dictionary-based `fillna` for null handling
 - Dead Letter Queue (DLQ) pattern — invalid records
   routed to separate table instead of silently dropped
 - SQL business insights: content split, top directors,
@@ -52,33 +52,66 @@ Each notebook builds on the previous one in complexity.
 **Stack:** Python · pandas · NumPy · SQLAlchemy · SQLite · SQL
 
 **What I built:**
-- Fixed column names (spaces → snake_case)
-- Parsed date strings → datetime, extracted year/month/quarter
-- Calculated shipping duration (`ship_days`)
-- numpy transforms: `np.where` sales tiers, 95th percentile
-  outlier detection, discount levels, profit status
-- apply/lambda: customer labels, shipping speed categories
-- map: region → zone classification
-- 5 groupby KPI aggregations with business insights
-- 4 SQL queries including window function `RANK() OVER`
-- Saved Parquet backup (568 KB)
+- Fixed column names — spaces to snake_case
+- Parsed date strings to datetime, extracted
+  year, month, quarter, order_dayname
+- Calculated shipping duration (ship_days)
+- numpy: sales tiers, 95th percentile outlier
+  detection, discount levels, profit status
+- apply/lambda: customer labels, shipping speed
+- map: region to zone classification
+- 5 groupby KPI aggregations
+- 4 SQL queries including RANK() window function
+- Parquet backup saved (568 KB)
 
 **Key findings:**
-- Technology = highest revenue ($836K, 1,847 orders)
-- 933 "bad deals" = high discount + negative profit
-- California = top state ($401K net revenue)
+- Technology = highest revenue ($836K)
+- 933 bad deals = heavy discount + negative profit
 - Phones = #1 sub-category by sales ($330K)
+
+---
+
+### Day 4 — UPI Payment ETL (Independent Practice)
+[`04_payment_etl_independent_practice.ipynb`](04_payment_etl_independent_practice.ipynb)
+
+**Dataset:** India Payment Pulse — 10,000 UPI transactions
+**Stack:** Python · pandas · NumPy · SQLAlchemy · SQLite · SQL
+
+**What I built:**
+- Loaded and validated 10,000 simulated UPI transactions
+- Multi-step cleaning: null removal, negative filtering,
+  deduplication, status standardisation (9,211 clean rows)
+- Feature engineering: hour, day_name, month, quarter,
+  is_weekend from timestamp
+- numpy: amount_tier (HIGH/MEDIUM/LOW), 99th percentile
+  outlier detection, flag_suspicious transactions
+- 5 groupby KPIs: city revenue, UPI app success rate,
+  category averages, peak transaction hours,
+  status distribution
+- Loaded to SQLite — transactions + suspicious_transactions
+- 3 SQL queries: top merchants, avg by status,
+  DENSE_RANK city leaderboard using CTE
+
+**Key findings:**
+- Peak hours: 14:00, 09:00, 23:00
+- Transfer category highest avg amount (₹25,811)
+- Ghaziabad #1 city by transaction count
+- 1,348 suspicious transactions flagged
 
 ---
 
 ## Progression
 
-| Notebook | Dataset | Rows | Key Concepts |
+| Notebook | Dataset | Rows | Key Concepts Added |
 |---|---|---|---|
 | Day 1 — Netflix | 1 file | 8,807 | DLQ, groupby transform, SQL |
-| Day 2 — Shein | 21 files | 82,105 | Multi-source, regex, np.where |
-| Day 3 — Superstore | 1 file | 9,994 | numpy, apply/lambda, SQL window functions |
+| Day 2 — Shein | 21 files | 82,105 | Multi-source, regex, feature eng |
+| Day 3 — Superstore | 1 file | 9,994 | numpy, apply/lambda, SQL windows |
+| Day 4 — UPI Payments | 1 file | 10,000 | Independent practice, CTE, DENSE_RANK |
 
+---
+
+## Skills Demonstrated
 ---
 
 ## Skills Demonstrated

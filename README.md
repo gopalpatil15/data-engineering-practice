@@ -100,6 +100,27 @@ Built independently — each notebook adds new concepts.
 
 ---
 
+### Day 5 — Live API Ingestion — Currency Exchange ETL
+[`05_api_ingestion_currency_etl.ipynb`](05_api_ingestion_currency_etl.ipynb)
+
+**Data Source:** Open Exchange Rates API (live, real-time)
+**Stack:** Python · requests · pandas · SQLAlchemy · SQLite · SQL
+
+**What I built:**
+- Called live REST API — parsed JSON response
+- Filtered 10 currencies from 166 available
+- Calculated rate_vs_inr for each currency
+- Flagged strong currencies (>₹50 per unit)
+- Loaded to SQLite with SQL analytics
+- RANK() window function on live data
+
+**Key findings:**
+- GBP strongest vs INR (₹127.6 per pound)
+- JPY weakest (₹0.59 per yen)
+- 6 of 10 currencies stronger than ₹50
+
+---
+
 ## Progression
 
 | Notebook | Dataset | Rows | Key Concepts Added |
